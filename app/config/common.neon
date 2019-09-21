@@ -1,0 +1,36 @@
+#
+# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+# https://nette.org/security-warning
+#
+parameters:
+    MyCms:
+        a: 1
+        b: 2
+        c: 3
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\*Module\*Presenter
+
+
+session:
+	expiration: 14 days
+
+
+database:
+	dsn: 'mysql:host=uvdb44.active24.cz;dbname=ph30euph30'
+	user: ph30euph30
+	password: nmpsPH30393
+	options:
+		lazy: yes
+
+
+services:
+	- App\Model\UserManager
+	- App\Forms\FormFactory
+	- App\Forms\SignInFormFactory
+	- App\Forms\SignUpFormFactory
+	- Nette\Configurator
+	- App\Model\ConfigFactory(%MyCms%)
+	router: App\Router\RouterFactory::createRouter

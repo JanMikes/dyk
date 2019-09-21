@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{ifset title}{include title|stripHtml}{else}ph30{/ifset}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{$basePath}/css/main.css" />
+    <noscript><link rel="stylesheet" href="{$basePath}/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/png" href="{$basePath}/favicon.png" />
+    <link rel="shortcut icon" href="{$basePath}/favicon.png" type="image/x-icon" />
+
+    {block head}{/block}
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            < = >
+        </div>
+        <div class="content">
+            <div class="inner">
+                <h1>Petr</h1>
+                <p>psáno bez F</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#petr">Petr</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+        {include content}
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p class="copyright">P</p>
+    </footer>
+
+</div>
+
+<!-- BG -->
+<div id="bg"></div>
+
+<!-- Scripts -->
+<script src="{$basePath}/js/jquery.min.js"></script>
+<script src="{$basePath}/js/browser.min.js"></script>
+<script src="{$basePath}/js/breakpoints.min.js"></script>
+<script src="{$basePath}/js/util.js"></script>
+<script src="{$basePath}/js/main.js"></script>
+
+</body>
+</html>
+
