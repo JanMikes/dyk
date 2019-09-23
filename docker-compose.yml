@@ -7,6 +7,8 @@ services:
     build: .
     volumes:
       - .:/var/www:cached
+    environment:
+      NETTE_DEBUG: 1
     depends_on:
       - mysql
 
