@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  web:
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    build: .
+    volumes:
+      - .:/var/www:cached
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "project"
+    volumes:
+      - ./.docker/mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
